@@ -28,7 +28,7 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
     const rulesButtons = $("#rules-buttons");
     for (const [name, rule] of Object.entries(rules)) {
         const button = $("<button>")
-            .addClass("btn btn-outline-secondary me-2")
+            .addClass("btn btn-outline-secondary me-2 mb-2")
             .attr("type", "button")
             .data("rule", rule)
             .html(rule.title)
