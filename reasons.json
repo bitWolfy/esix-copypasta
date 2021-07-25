@@ -1,7 +1,12 @@
 {
     "vandalism": "Don't remove valid tags from posts.",
     "creepy": "Please don't make comments like this.",
+    "tmi": "We don't need to know that, please keep it to yourself.",
     "spamming": "Don't spam.",
     "blacklist": "Please use your blacklist.",
-    "plagiarism": "We do not tolerate plagiarism."
+    "role-play": "Please don't role-play in the comments.",
+    "plagiarism": "We do not tolerate plagiarism.",
+    "dnp": "[[artist]] is on the avoid posting list",
+    "cdnp": "[[artist]] is conditionally DNP",
+    "paysite": "Paysite/commercial content is Do Not Post."
 }
