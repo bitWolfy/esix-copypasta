@@ -1,11 +1,29 @@
-Promise.all([fetchRecords(), fetchRules()]).then((data) => {
+Promise.all([
+    fetchRecords(),
+    fetchRules(),
+    fetchPrebuilt(),
+]).then((data) => {
 
     const url = new URL(document.location);
 
     const reasons = data[0],
-        rules = data[1];
+        rules = data[1],
+        prebuilt = data[2];
     console.log("reasons", reasons);
     console.log("rules", rules);
+    console.log("prebuilt", prebuilt);
+
+    // Generate the prebuilt links section
+    const prebuiltWrapper = $("#prebuilt-links")
+    for (const link of prebuilt) {
+        $("<a>")
+            .attr({
+                "href": link.url,
+            })
+            .addClass("m-2")
+            .text(link.title)
+            .appendTo(prebuiltWrapper);
+    }
 
     const output = $("#output");
 
@@ -145,5 +163,11 @@ async function fetchRecords() {
 async function fetchRules() {
     return new Promise((resolve) => {
         $.getJSON("rules.json", (json) => resolve(json));
+    });
+}
+
+async function fetchPrebuilt() {
+    return new Promise((resolve) => {
+        $.getJSON("prebuilt.json", (json) => resolve(json));
     });
 }

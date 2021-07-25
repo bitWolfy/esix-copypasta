@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Tagging",
+        "url": "?reason=vandalism&rules=vandalism"
+    },
+    {
+        "title": "Creepy",
+        "url": "?reason=creepy&rules=creepy"
+    },
+    {
+        "title": "Spam",
+        "url": "?reason=spam&rules=spamming"
+    },
+    {
+        "title": "Blacklist",
+        "url": "?reason=blacklist&rules=blacklist"
+    }
+]

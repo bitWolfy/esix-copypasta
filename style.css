@@ -7,6 +7,10 @@ div.container {
     height: 100%;
 }
 
+#prebuilt-links {
+    min-height: 1.5em;
+}
+
 a {
     color: #0a58ca;
     text-decoration: none;
