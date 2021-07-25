@@ -7,7 +7,11 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
     const output = $("#output");
 
     // Create the reasons dropdown
-    const reasonDropdown = $("#input-reason").on("change", () => { output.trigger("util:regenerate"); });
+    const reasonDropdown = $("#input-reason").on("change", () => {
+        output.trigger("util:regenerate");
+        const value = reasonDropdown.val();
+        $("#input-reason-custom-wrapper").toggleClass("d-none", value !== "custom");
+    });
     for (const [name, text] of Object.entries(reasons)) {
         $("<option>")
             .attr({
@@ -17,11 +21,18 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
             .appendTo(reasonDropdown);
     }
 
+    // Custom reason
+    let timerReason = null;
+    const reasonCustom = $("#input-reason-custom").on("input", () => {
+        clearTimeout(timerReason);
+        timerReason = setTimeout(() => { output.trigger("util:regenerate"); }, 200);
+    });
+
     // Keep track of sources
-    let timer = null;
+    let timeSources = null;
     const sources = $("#sources").on("input", () => {
-        clearTimeout(timer);
-        timer = setTimeout(() => { output.trigger("util:regenerate"); }, 200);
+        clearTimeout(timeSources);
+        timeSources = setTimeout(() => { output.trigger("util:regenerate"); }, 200);
     });
 
     // Add prebuilt rules
@@ -48,9 +59,9 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
 
         // Fetch the reason
         const value = reasonDropdown.val();
-        let reason = reasons[value];
+        let reason = value == "custom" ? (reasonCustom.val() + "") : reasons[value];
         console.log(value, reason);
-        if (!reason) reason = "!UNKNOWN REASON!";
+        if (!reason) reason = "!REASON EMPTY!";
 
         // Add sources
         const sourceList = (sources.val() + "").split("\n").filter(n => n);
