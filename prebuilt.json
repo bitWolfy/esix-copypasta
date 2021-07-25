@@ -12,7 +12,23 @@
         "url": "?reason=spamming&rules=spamming"
     },
     {
+        "title": "Roleplay",
+        "url": "?reason=role-play&rules=rp"
+    },
+    {
         "title": "Blacklist",
         "url": "?reason=blacklist&rules=blacklist"
+    },
+    {
+        "title": "DNP",
+        "url": "?reason=dnp&rules=postingabuse"
+    },
+    {
+        "title": "CDNP",
+        "url": "?reason=cdnp&rules=postingabuse"
+    },
+    {
+        "title": "Paysite",
+        "url": "?reason=paysite&rules=postingabuse"
     }
 ]
