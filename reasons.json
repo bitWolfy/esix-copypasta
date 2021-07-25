@@ -1,7 +1,7 @@
 {
     "vandalism": "Don't remove valid tags from posts.",
     "creepy": "Please don't make comments like this.",
-    "spam": "Don't spam.",
+    "spamming": "Don't spam.",
     "blacklist": "Please use your blacklist.",
     "plagiarism": "We do not tolerate plagiarism."
 }
