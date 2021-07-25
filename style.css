@@ -8,7 +8,11 @@ div.container {
 }
 
 a {
+    color: #0a58ca;
     text-decoration: none;
+}
+a:hover {
+    color: #212529;
 }
 
 textarea:focus, input:focus, select:focus, button:focus {
