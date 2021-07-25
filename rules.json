@@ -2,15 +2,88 @@
     "vandalism": {
         "title": "Tagging Abuse / Tagging Vandalism",
         "rules": [
-            "Removing a valid tag, either as part of a dispute/argument, or to place one that is not correct"
+            "Failure to cite a minimum of 4 tags to an uploaded post",
+            "Adding a tag to a post that is not either clearly visible, or reasonably assumed",
+            "Removing a valid tag, either as part of a dispute/argument, or to place one that is not correct",
+            "Failure to properly set the rating of your upload (https://e621.net/help/ratings)",
+            "Knowingly adding or editing a post source to an incorrect link",
+            "Adding invalid/disruptive tags, or any tags that could be considered as defamatory or spam",
+            "Using Unicode in tags, with the exception of foreign artist/character names"
         ],
-        "link": "/wiki_pages/1638#taggingabuse"
+        "link": "/wiki_pages/e621:rules#taggingabuse"
     },
     "creepy": {
         "title": "Creepy Comments",
         "rules": [
             "Creating forum posts, threads, or comments that cause an unpleasant feeling of fear or unease, or are sexually inappropriate"
         ],
-        "link": "/wiki_pages/e621:rules#Creepy"
+        "link": "/wiki_pages/e621:rules#creepy"
+    },
+    "spamming": {
+        "title": "Spamming or Trolling",
+        "rules": [
+            "Excessively communicating the same phrase, similar phrases, or pure gibberish",
+            "Creating comments, forum posts, or threads for the sole purpose of causing unrest",
+            "Causing disturbances in forum threads or comments, such as picking fights, making off topic posts that ruin the thread, and/or insult other members",
+            "Making non-constructive or derailing forum posts or comments.",
+            "Bragging about saving DNP material, or encouraging others to save it",
+            "Abusing the Report system or other website tools by sending false information or nonsensical messages",
+            "Creating forum threads about existing topics less than six months old",
+            "Creating a separate forum thread about an existing topic for further discussion in another forum category",
+            "Creating a separate forum thread about an existing locked topic for further discussion in any forum or site",
+            "Excessively posting old threads without adding anything to the discussion",
+            "Excessively creating pointless threads like forum games, asking for opinions on site irrelevant themes, asking for free art, etc",
+            "Numbering a thread, IBTL, ITT, TL;DR, or any other fad statements"
+        ],
+        "link": "/wiki_pages/e621:rules#spamming"
+    },
+    "blacklist": {
+        "title": "Refusal to Use Blacklist",
+        "rules": [
+            "Creating posts, threads, or comments that complain about artwork that can be blacklisted",
+            "Wrongfully claiming lack of knowledge about the blacklist system to avoid punishment from the previous rule"
+        ],
+        "link": "/wiki_pages/e621:rules#blacklist"
+    },
+    "harassment": {
+        "title": "Harassing or Defamatory",
+        "rules": [
+            "Insultingly refer to any individuals, including users, site staff, or Bad Dragon employees",
+            "Performing actions which result in ongoing harassment to any individuals, including users, site staff, or Bad Dragon employees",
+            "Using a User-requested ticket to publicly mock them"
+        ],
+        "link": "/wiki_pages/e621:rules#harassing"
+    },
+    "roleplay": {
+        "title": "Role-Play",
+        "rules": [
+            "Initiating or partaking in explicit role-play of any type",
+            "Impersonating fictional/nonfictional characters or people",
+            "Initiating or partaking in role-play with characters in the related thread/post"
+        ],
+        "link": "/wiki_pages/e621:rules#rp"
+    },
+    "disregard": {
+        "title": "Disregard of the Site Administration",
+        "rules": [
+            "Failure to abide by direct instructions by an administrator, moderator, and/or employee of Bad Dragon or Dragonfruit"
+        ],
+        "link": "/wiki_pages/e621:rules#disregardofadmin"
+    },
+    "sexual": {
+        "title": "Sexual Orientation",
+        "rules": [
+            "Insultingly refer to any aspect of sexual orientation pertaining to themselves or other members"
+        ],
+        "link": "/wiki_pages/e621:rules#sexualorientation"
+    },
+    "plagiarism": {
+        "title": "Plagiarism",
+        "rules": [
+            "Wrongfully claiming ownership of artwork",
+            "Tracing artwork without the consent of the original owner or artist",
+            "Repeatedly creating unauthorized edits after the original artist asked to stop"
+        ],
+        "link": "/wiki_pages/e621:rules#plagiarism"
     }
 }
