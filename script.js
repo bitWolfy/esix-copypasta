@@ -43,7 +43,6 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
             .attr("type", "button")
             .data("rule", rule)
             .html(rule.title)
-            .css("box-shadow", "none")
             .on("click", () => {
                 button.toggleClass("btn-dark btn-outline-dark");
                 output.trigger("util:regenerate");

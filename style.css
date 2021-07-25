@@ -10,3 +10,7 @@ div.container {
 a {
     text-decoration: none;
 }
+
+textarea:focus, input:focus, select:focus, button:focus {
+    box-shadow: none !important;
+}
