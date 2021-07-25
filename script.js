@@ -116,7 +116,7 @@ Promise.all([
 
             const ruleLines = [];
             for (const ruleLine of ruleData.rules)
-                ruleLines.push(`* ${ruleLine}`);
+                ruleLines.push((ruleLine.startsWith("*") ? "*" : "* ") + ruleLine);
             rulesOutput.push(`[section=${ruleData.title}]\n` +
                 `[b]This category includes:[/b]\n` +
                 `${ruleLines.join("\n")}\n` +
