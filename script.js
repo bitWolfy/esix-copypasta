@@ -1,4 +1,7 @@
 Promise.all([fetchRecords(), fetchRules()]).then((data) => {
+
+    const url = new URL(document.location);
+
     const reasons = data[0],
         rules = data[1];
     console.log("reasons", reasons);
@@ -20,6 +23,8 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
             .html(text)
             .appendTo(reasonDropdown);
     }
+    if (url.searchParams.has("reason"))
+        reasonDropdown.val(url.searchParams.get("reason"));
 
     // Custom reason
     let timerReason = null;
@@ -27,6 +32,8 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
         clearTimeout(timerReason);
         timerReason = setTimeout(() => { output.trigger("util:regenerate"); }, 200);
     });
+    if (url.searchParams.has("custom"))
+        reasonCustom.val(url.searchParams.get("custom"));
 
     // Keep track of sources
     let timeSources = null;
@@ -34,13 +41,20 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
         clearTimeout(timeSources);
         timeSources = setTimeout(() => { output.trigger("util:regenerate"); }, 200);
     });
+    if (url.searchParams.has("sources"))
+        sources.val(url.searchParams.get("sources"));
 
     // Add prebuilt rules
+    const enabledRules = url.searchParams.has("rules") ? url.searchParams.get("rules").split(",") : [];
     const rulesButtons = $("#rules-buttons");
     for (const [name, rule] of Object.entries(rules)) {
         const button = $("<button>")
-            .addClass("btn btn-outline-dark me-2 mb-2")
-            .attr("type", "button")
+            .addClass("btn me-2 mb-2")
+            .addClass(enabledRules.includes(name) ? "btn-dark" : "btn-outline-dark")
+            .attr({
+                "type": "button",
+                "name": name,
+            })
             .data("rule", rule)
             .html(rule.title)
             .on("click", () => {
@@ -51,15 +65,14 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
     }
 
     // Reset button
-    $("#button-reset").on("click", () => location.reload());
+    $("#button-reset").on("click", () => location.href = ".");
 
     // Regenerate the text whenever something changes
     output.on("util:regenerate", () => {
 
         // Fetch the reason
-        const value = reasonDropdown.val();
-        let reason = value == "custom" ? (reasonCustom.val() + "") : reasons[value];
-        console.log(value, reason);
+        const reasonValue = reasonDropdown.val();
+        let reason = reasonValue == "custom" ? (reasonCustom.val() + "") : reasons[reasonValue];
         if (!reason) reason = "!REASON EMPTY!";
 
         // Add sources
@@ -70,10 +83,14 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
         else
             for (const [index, source] of sourceList.entries()) sourceOutput.push(`"[${index + 1}]":${source}`);
 
-        // Import rules
+        // Append rules excerpts
         const rulesOutput = [];
+        const activeRules = [];
         for (const button of rulesButtons.find("button.btn-dark").get()) {
             const ruleData = $(button).data("rule");
+            const name = $(button).attr("name");
+            activeRules.push(name);
+
             const ruleLines = [];
             for (const ruleLine of ruleData.rules)
                 ruleLines.push(`* ${ruleLine}`);
@@ -85,11 +102,37 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
             );
         }
 
+        // Compose the record text
         output.val(
             reason + " " + sourceOutput.join(" ") + "\n" +
             rulesOutput.join("\n")
         );
+
+        // Update the URL
+        const params = [];
+        if (reasonValue !== "null") {
+            url.searchParams.set("reason", reasonValue);
+            if (reasonValue == "custom" && reasonCustom.val())
+                url.searchParams.set("custom", reasonCustom.val() + "");
+            else url.searchParams.delete("custom");
+        } else {
+            url.searchParams.delete("reason");
+            url.searchParams.delete("custom");
+        }
+
+        if (sourceList.length > 0)
+            url.searchParams.set("sources", sourceList.join("\n"));
+        else url.searchParams.delete("sources");
+
+        if (activeRules.length > 0)
+            url.searchParams.set("rules", activeRules.join(","));
+        else url.searchParams.delete("rules");
+
+
+        const searchPrefix = url.searchParams.toString().length === 0 ? "" : "?";
+        history.replaceState({}, "", url.origin + url.pathname + searchPrefix + url.searchParams.toString() + url.hash);
     });
+    output.trigger("util:regenerate");
 })
 
 
