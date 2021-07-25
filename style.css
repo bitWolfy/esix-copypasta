@@ -1,0 +1,12 @@
+body {
+    background: #193153;
+}
+
+div.container {
+    background: #ffffffee;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}

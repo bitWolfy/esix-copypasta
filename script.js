@@ -39,13 +39,13 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
     const rulesButtons = $("#rules-buttons");
     for (const [name, rule] of Object.entries(rules)) {
         const button = $("<button>")
-            .addClass("btn btn-outline-secondary me-2 mb-2")
+            .addClass("btn btn-outline-dark me-2 mb-2")
             .attr("type", "button")
             .data("rule", rule)
             .html(rule.title)
             .css("box-shadow", "none")
             .on("click", () => {
-                button.toggleClass("btn-secondary btn-outline-secondary");
+                button.toggleClass("btn-dark btn-outline-dark");
                 output.trigger("util:regenerate");
             })
             .appendTo(rulesButtons);
@@ -73,7 +73,7 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
 
         // Import rules
         const rulesOutput = [];
-        for (const button of rulesButtons.find("button.btn-secondary").get()) {
+        for (const button of rulesButtons.find("button.btn-dark").get()) {
             const ruleData = $(button).data("rule");
             const ruleLines = [];
             for (const ruleLine of ruleData.rules)
