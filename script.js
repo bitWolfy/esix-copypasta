@@ -81,7 +81,7 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
             rulesOutput.push(`[section=${ruleData.title}]\n` +
                 `[b]This category includes:[/b]\n` +
                 `${ruleLines.join("\n")}` +
-                `"[Code of Conduct - Tagging Abuse / Tagging Vandalism]":${ruleData.link}\n` +
+                `"[Code of Conduct - ${ruleData.title}]":${ruleData.link}\n` +
                 `[/section]`
             );
         }
