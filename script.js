@@ -120,7 +120,7 @@ Promise.all([
             rulesOutput.push(`[section=${ruleData.title}]\n` +
                 `[b]This category includes:[/b]\n` +
                 `${ruleLines.join("\n")}\n` +
-                `"[Code of Conduct - ${ruleData.title}]":${ruleData.link}\n` +
+                `"[Code of Conduct - ${ruleData.title}]":${ruleData.link ? ruleData.link : `/wiki_pages/e621:rules#${name}`}\n` +
                 `[/section]`
             );
         }
