@@ -1,0 +1,16 @@
+{
+    "vandalism": {
+        "title": "Tagging Abuse / Tagging Vandalism",
+        "rules": [
+            "Removing a valid tag, either as part of a dispute/argument, or to place one that is not correct"
+        ],
+        "link": "/wiki_pages/1638#taggingabuse"
+    },
+    "creepy": {
+        "title": "Creepy Comments",
+        "rules": [
+            "Creating forum posts, threads, or comments that cause an unpleasant feeling of fear or unease, or are sexually inappropriate"
+        ],
+        "link": "/wiki_pages/e621:rules#Creepy"
+    }
+}
