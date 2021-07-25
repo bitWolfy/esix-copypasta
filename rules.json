@@ -59,7 +59,8 @@
         "title": "Creepy Comments",
         "rules": [
             "Creating forum posts, threads, or comments that cause an unpleasant feeling of fear or unease, or are sexually inappropriate"
-        ]
+        ],
+        "common": "true"
     },
     "disregardofadmin": {
         "title": "Disregard of the Site Administration",
@@ -142,7 +143,8 @@
             "Editing/creating post descriptions (if you are not the artist, uploader, character owner, or commissioner) to create information",
             "Using post descriptions to express personal feelings, create drama, or otherwise take away from describing the attached post",
             "Please try to use proper spelling and grammar in post descriptions"
-        ]
+        ],
+        "common": "true"
     },
     "postinghacks": {
         "title": "Posting Hacks, Trojan Horses, or Malicious Programs",
@@ -172,7 +174,8 @@
             "Initiating or partaking in explicit role-play of any type",
             "Impersonating fictional/nonfictional characters or people",
             "Initiating or partaking in role-play with characters in the related thread/post"
-        ]
+        ],
+        "common": "true"
     },
     "sexualorientation": {
         "title": "Sexual Orientation",
@@ -203,7 +206,8 @@
             "Excessively posting old threads without adding anything to the discussion",
             "Excessively creating pointless threads like forum games, asking for opinions on site irrelevant themes, asking for free art, etc",
             "Numbering a thread, IBTL, ITT, TL;DR, or any other fad statements"
-        ]
+        ],
+        "common": "true"
     },
     "taggingabuse": {
         "title": "Tagging Abuse / Tagging Vandalism",
@@ -215,6 +219,7 @@
             "Knowingly adding or editing a post source to an incorrect link",
             "Adding invalid/disruptive tags, or any tags that could be considered as defamatory or spam",
             "Using Unicode in tags, with the exception of foreign artist/character names"
-        ]
+        ],
+        "common": "true"
     }
 }

@@ -69,7 +69,8 @@ Promise.all([
 
     // Add prebuilt rules
     const enabledRules = url.searchParams.has("rules") ? url.searchParams.get("rules").split(",") : [];
-    const rulesButtons = $("#rules-buttons");
+    const rulesButtonsCommon = $("#rules-buttons-common"),
+        rulesButtonsOther = $("#rules-buttons-other");
     for (const [name, rule] of Object.entries(rules)) {
         const button = $("<button>")
             .addClass("btn me-2 mb-2")
@@ -84,7 +85,7 @@ Promise.all([
                 button.toggleClass("btn-dark btn-outline-dark");
                 output.trigger("util:regenerate");
             })
-            .appendTo(rulesButtons);
+            .appendTo(rule.common ? rulesButtonsCommon : rulesButtonsOther);
     }
 
     // Reset button
@@ -109,7 +110,7 @@ Promise.all([
         // Append rules excerpts
         const rulesOutput = [];
         const activeRules = [];
-        for (const button of rulesButtons.find("button.btn-dark").get()) {
+        for (const button of $(".rules-buttons").find("button.btn-dark").get()) {
             const ruleData = $(button).data("rule");
             const name = $(button).attr("name");
             activeRules.push(name);
