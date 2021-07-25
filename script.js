@@ -96,7 +96,7 @@ Promise.all([
         // Fetch the reason
         const reasonValue = reasonDropdown.val();
         let reason = reasonValue == "custom" ? (reasonCustom.val() + "") : reasons[reasonValue];
-        if (!reason) reason = "!REASON EMPTY!";
+        if (!reason) reason = "";
 
         // Add sources
         const sourceList = (sources.val() + "").split("\n").filter(n => n);
@@ -127,7 +127,7 @@ Promise.all([
 
         // Compose the record text
         output.val(
-            reason + " " + sourceOutput.join(" ") + "\n" +
+            (reason.length > 0 ? (reason + " ") : "") + sourceOutput.join(" ") + "\n" +
             rulesOutput.join("\n")
         );
 
