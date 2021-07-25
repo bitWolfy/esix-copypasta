@@ -41,8 +41,13 @@ Promise.all([
             .html(text)
             .appendTo(reasonDropdown);
     }
-    if (url.searchParams.has("reason"))
-        reasonDropdown.val(url.searchParams.get("reason"));
+    if (url.searchParams.has("reason")) {
+        const importedReason = url.searchParams.get("reason");
+        reasonDropdown.val(importedReason);
+        if (importedReason == "custom")
+            $("#input-reason-custom-wrapper").removeClass("d-none")
+    }
+
 
     // Custom reason
     let timerReason = null;
