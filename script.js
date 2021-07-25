@@ -40,6 +40,9 @@ Promise.all([fetchRecords(), fetchRules()]).then((data) => {
             .appendTo(rulesButtons);
     }
 
+    // Reset button
+    $("#button-reset").on("click", () => location.reload());
+
     // Regenerate the text whenever something changes
     output.on("util:regenerate", () => {
 
