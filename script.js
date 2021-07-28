@@ -69,6 +69,7 @@ Promise.all([
 
     // Add prebuilt rules
     const enabledRules = url.searchParams.has("rules") ? url.searchParams.get("rules").split(",") : [];
+    const activeHotkeys = new Set();
     const rulesButtonsCommon = $("#rules-buttons-common"),
         rulesButtonsOther = $("#rules-buttons-other");
     for (const [name, rule] of Object.entries(rules)) {
@@ -86,6 +87,11 @@ Promise.all([
                 output.trigger("util:regenerate");
             })
             .appendTo(rule.common ? rulesButtonsCommon : rulesButtonsOther);
+        if (rule.hotkey && !activeHotkeys.has(rule.hotkey)) {
+            activeHotkeys.add(rule.hotkey);
+            button.attr("title", "Hotkey: " + rule.hotkey);
+            Mousetrap.bind(rule.hotkey, () => { button.trigger("click"); });
+        }
     }
 
     // Reset button

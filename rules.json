@@ -60,7 +60,8 @@
         "rules": [
             "Creating forum posts, threads, or comments that cause an unpleasant feeling of fear or unease, or are sexually inappropriate"
         ],
-        "common": "true"
+        "common": "true",
+        "hotkey": "1"
     },
     "disregardofadmin": {
         "title": "Disregard of the Site Administration",
@@ -144,7 +145,8 @@
             "Using post descriptions to express personal feelings, create drama, or otherwise take away from describing the attached post",
             "Please try to use proper spelling and grammar in post descriptions"
         ],
-        "common": "true"
+        "common": "true",
+        "hotkey": "2"
     },
     "postinghacks": {
         "title": "Posting Hacks, Trojan Horses, or Malicious Programs",
@@ -175,7 +177,8 @@
             "Impersonating fictional/nonfictional characters or people",
             "Initiating or partaking in role-play with characters in the related thread/post"
         ],
-        "common": "true"
+        "common": "true",
+        "hotkey": "3"
     },
     "sexualorientation": {
         "title": "Sexual Orientation",
@@ -207,7 +210,8 @@
             "Excessively creating pointless threads like forum games, asking for opinions on site irrelevant themes, asking for free art, etc",
             "Numbering a thread, IBTL, ITT, TL;DR, or any other fad statements"
         ],
-        "common": "true"
+        "common": "true",
+        "hotkey": "4"
     },
     "taggingabuse": {
         "title": "Tagging Abuse / Tagging Vandalism",
@@ -220,6 +224,7 @@
             "Adding invalid/disruptive tags, or any tags that could be considered as defamatory or spam",
             "Using Unicode in tags, with the exception of foreign artist/character names"
         ],
-        "common": "true"
+        "common": "true",
+        "hotkey": "5"
     }
 }
