@@ -13,18 +13,35 @@ Promise.all([
     console.log("rules", rules);
     console.log("prebuilt", prebuilt);
 
-    // Generate the prebuilt links section
-    const prebuiltWrapper = $("#prebuilt-links")
-    for (const link of prebuilt) {
-        $("<a>")
-            .attr({
-                "href": link.url,
-            })
-            .addClass("m-2")
-            .text(link.title)
-            .appendTo(prebuiltWrapper);
-    }
+    /* === Build the Quick Access section === */
+    const quickAccessLabel = $("#quickAccessLabel"),
+        quickAccessToggle = $("#quickAccessToggle");
+    const prebuiltWrapper = $("#prebuilt-links").on("util:regenerate", () => {
+        prebuiltWrapper.html("");
+        const customEnabled = quickAccessToggle.is(":checked");
+        for (const link of prebuilt) {
+            $("<a>")
+                .attr({
+                    "href": customEnabled ? link.custom : link.url,
+                })
+                .addClass("m-2")
+                .text(link.title)
+                .appendTo(prebuiltWrapper);
+        }
+    });;
 
+    // Enable the switching of prebuilt links
+    quickAccessToggle.on("click", () => {
+        const customEnabled = quickAccessToggle.is(":checked");
+        quickAccessLabel.text(customEnabled ? "Custom Reason" : "Quick Access");
+        localStorage.setItem("quickAccessState", customEnabled);
+        prebuiltWrapper.trigger("util:regenerate");
+    });
+    if (localStorage.getItem("quickAccessState") == "true") quickAccessToggle.prop("checked", true);
+    prebuiltWrapper.trigger("util:regenerate");
+
+
+    /* === Build the record builder form === */
     const output = $("#output");
 
     // Create the reasons dropdown

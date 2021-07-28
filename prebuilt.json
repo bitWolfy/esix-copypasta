@@ -1,34 +1,42 @@
 [
     {
         "title": "Tagging",
-        "url": "?reason=vandalism&rules=taggingabuse"
+        "url": "?reason=vandalism&rules=taggingabuse",
+        "custom": "?reason=custom&rules=taggingabuse"
     },
     {
         "title": "Creepy",
-        "url": "?reason=creepy&rules=creepy"
+        "url": "?reason=creepy&rules=creepy",
+        "custom": "?reason=custom&rules=creepy"
     },
     {
         "title": "Spam",
-        "url": "?reason=spamming&rules=spamming"
+        "url": "?reason=spamming&rules=spamming",
+        "custom": "?reason=custom&rules=spamming"
     },
     {
         "title": "Roleplay",
-        "url": "?reason=role-play&rules=rp"
+        "url": "?reason=role-play&rules=rp",
+        "custom": "?reason=custom&rules=rp"
     },
     {
         "title": "Blacklist",
-        "url": "?reason=blacklist&rules=blacklist"
+        "url": "?reason=blacklist&rules=blacklist",
+        "custom": "?reason=custom&rules=blacklist"
     },
     {
         "title": "DNP",
-        "url": "?reason=dnp&rules=postingabuse"
+        "url": "?reason=dnp&rules=postingabuse",
+        "custom": "?reason=custom&rules=postingabuse"
     },
     {
         "title": "CDNP",
-        "url": "?reason=cdnp&rules=postingabuse"
+        "url": "?reason=cdnp&rules=postingabuse",
+        "custom": "?reason=custom&rules=postingabuse"
     },
     {
         "title": "Paysite",
-        "url": "?reason=paysite&rules=postingabuse"
+        "url": "?reason=paysite&rules=postingabuse",
+        "custom": "?reason=custom&rules=postingabuse"
     }
 ]

@@ -11,6 +11,10 @@ div.container {
     min-height: 1.5em;
 }
 
+#quickAccessLabel {
+    width: 7.5rem;
+}
+
 a {
     color: #0a58ca;
     text-decoration: none;
