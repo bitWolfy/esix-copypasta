@@ -46,7 +46,9 @@
         "rules": [
             "Creating posts, threads, or comments that complain about artwork that can be blacklisted",
             "Wrongfully claiming lack of knowledge about the blacklist system to avoid punishment from the previous rule"
-        ]
+        ],
+        "common": "true",
+        "hotkey": "1"
     },
     "banevading": {
         "title": "Circumventing a Suspension / Ban",
@@ -61,7 +63,7 @@
             "Creating forum posts, threads, or comments that cause an unpleasant feeling of fear or unease, or are sexually inappropriate"
         ],
         "common": "true",
-        "hotkey": "1"
+        "hotkey": "2"
     },
     "disregardofadmin": {
         "title": "Disregard of the Site Administration",
@@ -146,7 +148,7 @@
             "Please try to use proper spelling and grammar in post descriptions"
         ],
         "common": "true",
-        "hotkey": "2"
+        "hotkey": "3"
     },
     "postinghacks": {
         "title": "Posting Hacks, Trojan Horses, or Malicious Programs",
@@ -178,7 +180,7 @@
             "Initiating or partaking in role-play with characters in the related thread/post"
         ],
         "common": "true",
-        "hotkey": "3"
+        "hotkey": "4"
     },
     "sexualorientation": {
         "title": "Sexual Orientation",
@@ -211,7 +213,7 @@
             "Numbering a thread, IBTL, ITT, TL;DR, or any other fad statements"
         ],
         "common": "true",
-        "hotkey": "4"
+        "hotkey": "5"
     },
     "taggingabuse": {
         "title": "Tagging Abuse / Tagging Vandalism",
@@ -225,6 +227,6 @@
             "Using Unicode in tags, with the exception of foreign artist/character names"
         ],
         "common": "true",
-        "hotkey": "5"
+        "hotkey": "6"
     }
 }
