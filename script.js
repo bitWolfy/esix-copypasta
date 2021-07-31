@@ -151,7 +151,7 @@ Promise.all([
 
         // Compose the record text
         output.val(
-            (reason.length > 0 ? (reason + " ") : "") + sourceOutput.join(" ") + "\n\n" +
+            (reason.length > 0 ? (reason + " ") : "") + sourceOutput.join(" ") + "\n" +
             rulesOutput.join("\n")
         );
 
