@@ -7,8 +7,8 @@
     "blacklist": "Please use your blacklist.",
     "role-play": "Please don't role-play in the comments.",
     "plagiarism": "We do not tolerate plagiarism.",
-    "dnp": "[[artist]] is on the avoid posting list",
-    "cdnp": "[[artist]] is conditionally DNP",
+    "dnp": "[[artist]] is Do Not Post.",
+    "cdnp": "[[artist]] is conditionally DNP.",
     "paysite": "Paysite/commercial content is Do Not Post.",
-    "banevasion": "Ban evasion"
+    "banevasion": "Ban evasion."
 }
