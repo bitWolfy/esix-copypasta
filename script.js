@@ -143,7 +143,7 @@ Promise.all([
                 ruleLines.push((ruleLine.startsWith("*") ? "*" : "* ") + ruleLine);
             rulesOutput.push(`[section=${ruleData.title}]\n` +
                 `[b]This category includes:[/b]\n` +
-                `${ruleLines.join("\n")}\n` +
+                `${ruleLines.join("\n")}\n\n` +
                 `"[Code of Conduct - ${ruleData.title}]":${ruleData.link ? ruleData.link : `/wiki_pages/e621:rules#${name}`}\n` +
                 `[/section]`
             );
