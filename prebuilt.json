@@ -38,5 +38,10 @@
         "title": "Paysite",
         "url": "?reason=paysite&rules=postingabuse",
         "custom": "?reason=custom&rules=postingabuse"
+    },
+    {
+        "title": "Underage",
+        "url": "?reason=underage&rules=underage",
+        "custom": "?reason=custom&rules=underage"
     }
 ]
