@@ -126,10 +126,10 @@ Promise.all([
         const sourceList = (sources.val() + "").split("\n").filter(n => n);
         let sourceOutput = [];
         if (sourceList.length == 0) sourceOutput = [];
-        else if (sourceList.length == 1) sourceOutput = [`"[Source]":${sourceList[0]}`];
+        else if (sourceList.length == 1) sourceOutput = [`"[Source]":${processSource(sourceList[0])}`];
         else
-            for (const [index, source] of sourceList.entries()) sourceOutput.push(`"[${index + 1}]":${source}`);
-
+            for (const [index, source] of sourceList.entries()) sourceOutput.push(`"[${index + 1}]":${processSource(source)}`);
+        
         // Append rules excerpts
         const rulesOutput = [];
         const activeRules = [];
@@ -199,4 +199,14 @@ async function fetchPrebuilt() {
     return new Promise((resolve) => {
         $.getJSON("prebuilt.json", (json) => resolve(json));
     });
+}
+
+/**
+ * Convert a source link into a common format
+ * @param {string} source Source link
+ */
+function processSource(source) {
+    return source
+        .replace(/https:\/\/e(?:621|926).net\//g, "/")
+        .replace(/\/posts\/(\d+)#comment-(\d+)/g, "/comments/$2");
 }
