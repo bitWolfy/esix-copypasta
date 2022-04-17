@@ -206,7 +206,9 @@ async function fetchPrebuilt() {
  * @param {string} source Source link
  */
 function processSource(source) {
-    return source
-        .replace(/https:\/\/e(?:621|926).net\//g, "/")
-        .replace(/\/posts\/(\d+)#comment-(\d+)/g, "/comments/$2");
+    return decodeURI(source)
+        .replace(/https:\/\/e(?:621|926).net\//g, "/")              // Make links relative
+        .replace(/\/posts\/(\d+)#comment-(\d+)/g, "/comments/$2")   // Convert comment links
+        .replace(/\?lr=\d+&/, "?")                                  // Trim the tag history links
+        ;
 }
