@@ -15,6 +15,11 @@
         "custom": "?reason=custom&rules=spamming"
     },
     {
+        "title": "Trolling",
+        "url": "?reason=trolling&rules=spamming",
+        "custom": "?reason=custom&rules=spamming"
+    },
+    {
         "title": "Roleplay",
         "url": "?reason=role-play&rules=rp",
         "custom": "?reason=custom&rules=rp"
