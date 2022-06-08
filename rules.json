@@ -57,10 +57,12 @@
             "Having someone post on your behalf"
         ]
     },
-    "creepy": {
-        "title": "Creepy Comments",
+    "inappropriate": {
+        "title": "Inappropriate Comments",
         "rules": [
-            "Creating forum posts, threads, or comments that cause an unpleasant feeling of fear or unease, or are sexually inappropriate"
+            "Creating forum posts, threads, or comments that share explicit details about personal sexual fantasies or actions",
+            "Creating comments that exceed the rating of the submission",
+            "* For a few examples and elaborations please see \"here\":/help/inappropriate_comments"
         ],
         "common": "true",
         "hotkey": "2"

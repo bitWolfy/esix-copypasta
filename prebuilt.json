@@ -6,7 +6,7 @@
     },
     {
         "title": "Creepy",
-        "url": "?reason=creepy&rules=creepy",
+        "url": "?reason=inappropriate&rules=inappropriate",
         "custom": "?reason=custom&rules=creepy"
     },
     {
